@@ -128,7 +128,7 @@
   /* full-bleed cinematic band */
   .band{position:relative;height:64vh;min-height:420px;display:flex;align-items:flex-end;overflow:hidden}
   .band .scene{position:absolute;inset:0;transform:scale(1.06);transition:transform 1.6s var(--ease);
-    background:linear-gradient(120deg,#3A2E22,#7A6244 55%,#B79366)}
+    background:linear-gradient(120deg,#3A2E22,#7A6244 55%,#B79366);background-size:cover;background-position:center}
   .band.cool .scene{background:linear-gradient(120deg,#26201A,#3A4E55 60%,#6E8A8F)}
   .band:hover .scene{transform:scale(1.12)}
   .band .scene:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,15,11,.1),rgba(20,15,11,.62))}
@@ -225,11 +225,9 @@
 <!-- HERO -->
 <header class="hero" id="top">
   <div class="hero-media">
-    <div class="scene"></div>
-    <!-- Drop teaser footage here: <video autoplay muted loop playsinline poster="assets/poster.jpg"><source src="assets/hero-loop.mp4" type="video/mp4"></video> -->
+    <video class="herovid" autoplay muted loop playsinline poster="poster.jpg"><source src="hero-loop.mp4" type="video/mp4"></video>
     <div class="hero-grain"></div>
     <div class="hero-shade"></div>
-    <div class="hero-slot">cinematic film slot · TΩRA teaser footage</div>
   </div>
   <div class="wrap hero-in">
     <div class="tora">T<span class="om">Ω</span>RA</div>
@@ -249,6 +247,12 @@
     <h2 class="reveal d1">A hotel that feels like <em>a collection of villas.</em></h2>
     <p class="reveal d2">Arrive at one welcome, then disappear into a home that is entirely your own — a villa room or a whole villa, each set apart so that privacy is a matter of architecture, never of request. Stone, light and the open Aegean belong to every one of them, scattered across a single hillside above Agios Georgios. You arrive once, and live in many places.</p>
   </div>
+</section>
+
+<section class="band photo">
+  <div class="scene" style="background-image:url('blue-lagoon.jpg')"></div>
+  <span class="tag">The Blue Lagoon</span>
+  <div class="wrap cap"><h2 class="reveal">An hour from Paros, and a world from everywhere.</h2></div>
 </section>
 
 <!-- OPPORTUNITY (early financial beat) -->
@@ -287,9 +291,9 @@
 <div class="seam-p-d"></div>
 
 <!-- CINEMATIC BAND -->
-<section class="band">
-  <div class="scene"></div>
-  <span class="tag">film · the bay at golden hour</span>
+<section class="band photo">
+  <div class="scene" style="background-image:url('bay-chora.jpg')"></div>
+  <span class="tag">Antiparos · golden hour</span>
   <div class="wrap cap"><h2 class="reveal">The light turns gold around eight, and the whole island leans toward the sea.</h2></div>
 </section>
 
@@ -312,6 +316,12 @@
 
 <div class="seam-s-d"></div>
 
+<section class="band photo">
+  <div class="scene" style="background-image:url('church-chora.jpg')"></div>
+  <span class="tag">Chora</span>
+  <div class="wrap cap"><h2 class="reveal">White against the blue, the way the Cyclades have always been.</h2></div>
+</section>
+
 <!-- COLLECTION -->
 <section class="pad coll on-dark" id="collection">
   <div class="wrap">
@@ -328,6 +338,12 @@
 </section>
 
 <div class="seam-d-p"></div>
+
+<section class="band photo">
+  <div class="scene" style="background-image:url('villa-lev.jpg')"></div>
+  <span class="tag">Villa Lev</span>
+  <div class="wrap cap"><h2 class="reveal">Villa Lev — the first of the collection.</h2></div>
+</section>
 
 <!-- PROOF -->
 <section class="pad proof on-paper" id="proof">
