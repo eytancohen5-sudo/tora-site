@@ -131,6 +131,8 @@
 
   /* full-bleed cinematic band */
   .band{position:relative;height:64vh;min-height:420px;display:flex;align-items:flex-end;overflow:hidden}
+  .band.tall{height:90vh;min-height:600px}
+  .band.tall .scene{background-position:center 42%}
   .band .scene{position:absolute;inset:0;transform:scale(1.06);transition:transform 1.6s var(--ease);
     background:linear-gradient(120deg,#3A2E22,#7A6244 55%,#B79366);background-size:cover;background-position:center}
   .band.cool .scene{background:linear-gradient(120deg,#26201A,#3A4E55 60%,#6E8A8F)}
@@ -320,7 +322,7 @@
 <div class="seam-p-d"></div>
 
 <!-- CINEMATIC BAND -->
-<section class="band photo">
+<section class="band photo tall">
   <div class="scene" style="background-image:url('afterglow.jpg')"></div>
   <span class="tag">Villa Lev · after golden hour</span>
   <div class="wrap cap"><h2 class="reveal">The light turns gold around eight — then the sky becomes a show of colours and shapes.</h2></div>
