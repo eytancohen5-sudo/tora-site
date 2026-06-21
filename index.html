@@ -162,6 +162,11 @@
   .cc p{font-size:.88rem;color:var(--muted-d);margin:0}
   @media(max-width:820px){.coll-row{grid-template-columns:1fr 1fr;gap:28px 24px}}
   @media(max-width:480px){.coll-row{grid-template-columns:1fr}}
+  .coll.on-sand h2 em{color:var(--bronze);font-style:italic}
+  .coll.on-sand p{color:var(--muted-l)}
+  .coll.on-sand .cc{border-top-color:var(--line-l)}
+  .coll.on-sand .cc h3{color:var(--ink)}
+  .coll.on-sand .cc p{color:var(--muted-l)}
 
   /* ── proof ── */
   .proof{text-align:center}
@@ -256,6 +261,12 @@
   </div>
 </section>
 
+<section class="band photo">
+  <div class="scene" style="background-image:url('church-chora.jpg')"></div>
+  <span class="tag">Antiparos · Chora</span>
+  <div class="wrap cap"><h2 class="reveal">A place that could exist nowhere else.</h2></div>
+</section>
+
 <!-- CONCEPT -->
 <section class="pad concept on-dark" id="concept">
   <div class="wrap">
@@ -319,7 +330,7 @@
 </section>
 
 <!-- COLLECTION -->
-<section class="pad coll on-dark" id="collection">
+<section class="pad coll on-sand" id="collection">
   <div class="wrap">
     <span class="eyebrow reveal">The collection</span>
     <h2 class="reveal d1">One welcome. <em>Many ways to stay.</em></h2>
@@ -332,6 +343,8 @@
     </div>
   </div>
 </section>
+
+<div class="seam-s-d"></div>
 
 <!-- OPPORTUNITY (moved: before proof) -->
 <section class="pad opp on-dark2" id="opportunity">
