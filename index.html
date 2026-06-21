@@ -45,7 +45,12 @@
   .nav-links a:hover{color:var(--paper)}
   .nav-cta{font-size:12px;letter-spacing:.16em;text-transform:uppercase;padding:10px 22px;border:1px solid var(--bronze-hi);border-radius:40px;color:var(--bronze-hi)!important;text-shadow:none}
   .nav-cta:hover{background:var(--bronze);color:var(--ink)!important}
-  @media(max-width:760px){.nav-links a:not(.nav-cta){display:none}.hero-media video{object-position:32% 50%}}
+  /* ── language toggle (a <div>, never hidden on mobile) ── */
+  .lang-tog{display:inline-flex;align-items:center;border:1px solid var(--line-d);border-radius:40px;overflow:hidden}
+  .lang-tog button{font-family:var(--sans);font-weight:500;font-size:11px;letter-spacing:.1em;padding:6px 11px;background:transparent;color:var(--muted-d);border:0;cursor:pointer;line-height:1;transition:color .3s,background .3s}
+  .lang-tog button.active{background:var(--bronze);color:var(--ink)}
+  .lang-tog button:not(.active):hover{color:var(--paper)}
+  @media(max-width:760px){.nav-links a:not(.nav-cta){display:none}.nav-links{gap:14px}.hero-media video{object-position:32% 50%}}
 
   /* ── Hero (cinematic, video-ready) ── */
   .hero{position:relative;height:100vh;min-height:660px;display:flex;align-items:center;overflow:hidden;text-align:center}
@@ -181,7 +186,10 @@
   .proof{text-align:center}
   .proof .eyebrow{display:block;margin-bottom:14px}
   .proof h2{font-size:clamp(1.7rem,3.4vw,2.5rem);max-width:22ch;margin:0 auto 58px}
-  .proof-row{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+  .proof-row{display:grid;grid-template-columns:repeat(4,1fr);gap:40px}
+  .stat-concept .v{font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.2;font-variant-numeric:normal}
+  .stat-concept .l{margin-top:12px}
+  @media(max-width:880px){.proof-row{grid-template-columns:1fr 1fr;gap:32px 28px}}
   .stat .v{font-family:var(--serif);font-size:clamp(2.8rem,6.5vw,4.6rem);color:var(--bronze);line-height:1;font-variant-numeric:tabular-nums}
   .stat .l{margin-top:14px;font-size:.9rem;color:var(--muted-l)}
   .stat .s{display:inline-block;margin-top:9px;font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--faint-l)}
@@ -234,11 +242,15 @@
   <div class="wrap nav-in">
     <a href="#top" class="brand"><img class="logo" src="tora-logo.svg" alt="TΩRA" /></a>
     <div class="nav-links">
-      <a href="#muse">The Concept</a>
-      <a href="#proof">The Proof</a>
-      <a href="#feelings">The Stay</a>
-      <a href="#join">Invest</a>
-      <a href="#join" class="nav-cta">Enquire</a>
+      <a href="#muse" data-i18n="nav.concept">The Concept</a>
+      <a href="#proof" data-i18n="nav.proof">The Proof</a>
+      <a href="#feelings" data-i18n="nav.stay">The Stay</a>
+      <a href="#join" data-i18n="nav.invest">Invest</a>
+      <a href="#join" class="nav-cta" data-i18n="nav.enquire">Enquire</a>
+      <div class="lang-tog" role="group" aria-label="Language / Γλώσσα">
+        <button type="button" data-lang="en" class="active">EN</button>
+        <button type="button" data-lang="el">ΕΛ</button>
+      </div>
     </div>
   </div>
 </nav>
@@ -252,43 +264,43 @@
   </div>
   <div class="wrap hero-in">
     <div class="tora"><img class="logo" src="tora-logo.svg" alt="TΩRA" /></div>
-    <div class="place">Saint George · Antiparos · Cyclades</div>
-    <p class="line">Where quiet luxury meets creativity.</p>
-    <p class="def"><span class="hw">Tora</span> · τώρα · <span class="pos">adv.</span> — “now,” in Greek.</p>
-    <p class="sub">Above the Aegean, the days are unhurried and unpretentious, the sea fills every view, and creativity runs through the house — an invitation to stop, and live fully in the now: in Tora.</p>
-    <div class="opentag">Opening summer 2029</div>
+    <div class="place" data-i18n="hero.place">Saint George · Antiparos · Cyclades</div>
+    <p class="line" data-i18n="hero.line">Where quiet luxury meets creativity.</p>
+    <p class="def" data-i18n="hero.def"><span class="hw">Tora</span> · τώρα · <span class="pos">adv.</span> — "now," in Greek.</p>
+    <p class="sub" data-i18n="hero.sub">Above the Aegean, the days are unhurried and unpretentious, the sea fills every view, and creativity runs through the house — an invitation to stop, and live fully in the present.</p>
+    <div class="opentag" data-i18n="hero.opentag">Opening summer 2029</div>
   </div>
-  <a href="#premise" class="scrollcue"><i></i><span>Begin</span></a>
+  <a href="#premise" class="scrollcue"><i></i><span data-i18n="hero.begin">Begin</span></a>
 </header>
 
 <!-- PREMISE (moved: right after hero) -->
 <section class="pad vision on-dark" id="premise">
   <div class="wrap">
-    <span class="eyebrow reveal">The next evolution of luxury travel</span>
-    <h2 class="reveal d1">White-glove luxury is obsolete. <em>The new currency is meaning.</em></h2>
-    <p class="reveal d2">The most discerning travellers have seen every version of five-star; what they seek now is depth, not flash — a place that could exist nowhere else. At Tora that depth is presence, found through creativity that runs quietly through the house — there to be observed, or made your own. We are not selling a room, but a stay whose meaning lingers long after it ends.</p>
+    <span class="eyebrow reveal" data-i18n="premise.eyebrow">The next evolution of luxury travel</span>
+    <h2 class="reveal d1" data-i18n="premise.h2">White-glove luxury is obsolete. <em>The new currency is meaning.</em></h2>
+    <p class="reveal d2" data-i18n="premise.p">The most discerning travellers have seen every version of five-star; what they seek now is depth, not flash — a place that could exist nowhere else. At Tora that depth is presence, found through creativity that runs quietly through the house — there to be observed, or made your own. We are not selling a room, but a stay whose meaning lingers long after it ends.</p>
   </div>
 </section>
 
 <section class="band photo">
   <div class="scene" style="background-image:url('despotiko.jpg')"></div>
-  <span class="tag">Bay of Saint George · Despotiko — the view from one of our plots</span>
-  <div class="wrap cap"><h2 class="reveal">A place that could exist nowhere else.</h2></div>
+  <span class="tag" data-i18n="band.despotiko.tag">Bay of Saint George · Despotiko — the view from one of our plots</span>
+  <div class="wrap cap"><h2 class="reveal" data-i18n="band.despotiko.h2">A place that could exist nowhere else.</h2></div>
 </section>
 
 <!-- THE CONCEPT — the making -->
 <section class="pad muse on-paper" id="muse">
   <div class="wrap">
     <div class="lead">
-      <span class="eyebrow reveal">The concept</span>
-      <h2 class="reveal d1">A stay is the beginning. <em>The making is the rest.</em></h2>
-      <p class="reveal d2">Creativity is the backbone of the house — embedded everywhere, forced nowhere. Artists live and work here through the season: a studio door left open, a salon that drifts late, a conversation you carry to dinner. You choose your own distance from it — observe, join in, create alongside them, or let it be. The island and its calm come first; the making lives beside you, never in front of you. What remains is an exchange between artist, guest and island that cannot be copied — here, you choose not simply a room, but the creative season.</p>
+      <span class="eyebrow reveal" data-i18n="muse.eyebrow">The concept</span>
+      <h2 class="reveal d1" data-i18n="muse.h2">A stay is the beginning. <em>The making is the rest.</em></h2>
+      <p class="reveal d2" data-i18n="muse.p">Creativity is the backbone of the house — embedded everywhere, forced nowhere. Artists live and work here through the season: a studio door left open, a salon that drifts late, a conversation you carry to dinner. You choose your own distance from it — observe, join in, create alongside them, or let it be. The island and its calm come first; the making lives beside you, never in front of you. What remains is an exchange between artist, guest and island that cannot be copied — here, you choose not simply a room, but the creative season.</p>
     </div>
     <div class="ways">
-      <div class="way reveal"><div class="n">01</div><h3>The studios</h3><p>Artists in residence in open-air ateliers — their work, and your standing welcome to it.</p></div>
-      <div class="way reveal d1"><div class="n">02</div><h3>The table</h3><p>Cooking classes and long, unhurried lunches with a chef who knows the island's growers.</p></div>
-      <div class="way reveal d2"><div class="n">03</div><h3>By sea &amp; land</h3><p>A boat to a quiet cove at dawn, and the back roads by ATV whenever the mood moves you.</p></div>
-      <div class="way accent reveal d3"><div class="n">04</div><h3>Stillness</h3><p>A chair, the shade, the bay — the most treasured plan of all.</p></div>
+      <div class="way reveal"><div class="n">01</div><h3 data-i18n="way1.h3">The studios</h3><p data-i18n="way1.p">Artists in residence in open-air ateliers — their work, and your standing welcome to it.</p></div>
+      <div class="way reveal d1"><div class="n">02</div><h3 data-i18n="way2.h3">The table</h3><p data-i18n="way2.p">Cooking classes and long, unhurried lunches with a chef who knows the island's growers.</p></div>
+      <div class="way reveal d2"><div class="n">03</div><h3 data-i18n="way3.h3">By sea &amp; land</h3><p data-i18n="way3.p">A boat to a quiet cove at dawn, and the back roads by ATV whenever the mood moves you.</p></div>
+      <div class="way accent reveal d3"><div class="n">04</div><h3 data-i18n="way4.h3">Stillness</h3><p data-i18n="way4.p">A chair, the shade, the bay — the most treasured plan of all.</p></div>
     </div>
   </div>
 </section>
@@ -298,24 +310,25 @@
 <!-- VILLA LEV band -->
 <section class="band photo vl-band">
   <div class="scene" style="background-image:url('villa-lev.jpg')"></div>
-  <span class="tag">Villa Lev · Saint George</span>
+  <span class="tag" data-i18n="band.vl.tag">Villa Lev · Saint George</span>
   <img class="vl-logo" src="villa-lev-logo.png" alt="Villa Lev" />
-  <div class="wrap cap"><h2 class="reveal">Where it all begins.</h2></div>
+  <div class="wrap cap"><h2 class="reveal" data-i18n="band.vl.h2">Where it all begins.</h2></div>
 </section>
 
 <!-- PROOF OF CONCEPT (opportunity + proof, condensed) -->
 <section class="pad proof on-paper" id="proof">
   <div class="wrap">
-    <span class="eyebrow reveal">Proof of concept · Villa Lev</span>
-    <h2 class="reveal d1">The island already loves the house — <em>and there's room for more.</em></h2>
-    <p class="intro reveal d2">Tora begins with Villa Lev: five profitable seasons as the most sought-after villa on Antiparos, a waiting list every summer, the standard and team already in place. The only thing missing was the room to grow — until now. Opening summer 2029.</p>
+    <span class="eyebrow reveal" data-i18n="proof.eyebrow">Proof of concept · Villa Lev</span>
+    <h2 class="reveal d1" data-i18n="proof.h2">The island already loves the house — <em>and there's room for more.</em></h2>
+    <p class="intro reveal d2" data-i18n="proof.intro">Tora begins with Villa Lev: five profitable seasons as the most sought-after villa on Antiparos, a waiting list every summer, the standard and team already in place. The only thing missing was the room to grow — until now. Opening summer 2029.</p>
     <div class="proof-row">
-      <div class="stat reveal"><div class="v num" data-count="1" data-prefix="#">#1</div><div class="l">villa on Antiparos</div><a class="s" href="https://www.villalevantiparos.com" target="_blank" rel="noopener">Villa Lev website →</a></div>
-      <div class="stat reveal d1"><div class="v num" data-count="5" data-suffix="%" data-prefix="top ">top 5%</div><div class="l">of Airbnb worldwide</div><a class="s" href="https://www.airbnb.com/h/villalev" target="_blank" rel="noopener">View on Airbnb →</a></div>
-      <div class="stat reveal d2"><div class="v num" data-count="5" data-decimals="1" data-suffix="★">5.0★</div><div class="l">held every season</div><a class="s" href="https://www.google.com/search?q=Villa+Lev+Antiparos+reviews" target="_blank" rel="noopener">Read on Google →</a></div>
+      <div class="stat reveal"><div class="v num" data-count="1" data-prefix="#">#1</div><div class="l" data-i18n="proof.stat1.l">villa on Antiparos</div><a class="s" href="https://www.villalevantiparos.com" target="_blank" rel="noopener" data-i18n="proof.stat1.s">Villa Lev website →</a></div>
+      <div class="stat reveal d1"><div class="v num" data-count="5" data-suffix="%" data-prefix="top ">top 5%</div><div class="l" data-i18n="proof.stat2.l">of Airbnb worldwide</div><a class="s" href="https://www.airbnb.com/h/villalev" target="_blank" rel="noopener" data-i18n="proof.stat2.s">View on Airbnb →</a></div>
+      <div class="stat reveal d2"><div class="v num" data-count="5" data-decimals="1" data-suffix="★">5.0★</div><div class="l" data-i18n="proof.stat3.l">held every season</div><a class="s" href="https://www.google.com/search?q=Villa+Lev+Antiparos+reviews" target="_blank" rel="noopener" data-i18n="proof.stat3.s">Read on Google →</a></div>
+      <div class="stat stat-concept reveal d3"><div class="v" data-i18n="proof.concept.title">The Concept</div><div class="l" data-i18n="proof.concept.body">Creativity woven into every stay — studios open to guests, the table, and the stillness.</div><a class="s" href="#muse" data-i18n="proof.concept.link">Discover it →</a></div>
     </div>
-    <div class="visit reveal d3"><a href="https://www.villalevantiparos.com" target="_blank" rel="noopener">Visit Villa Lev</a></div>
-    <p class="src reveal d3">Ranking via AirDNA · reviews via Airbnb &amp; Google · figures from Villa Lev's public record.</p>
+    <div class="visit reveal d3"><a href="https://www.villalevantiparos.com" target="_blank" rel="noopener" data-i18n="proof.visit">Visit Villa Lev</a></div>
+    <p class="src reveal d3" data-i18n="proof.src">Ranking via AirDNA · reviews via Airbnb &amp; Google · figures from Villa Lev's public record.</p>
   </div>
 </section>
 
@@ -324,23 +337,23 @@
 <!-- CINEMATIC BAND -->
 <section class="band photo tall">
   <div class="scene" style="background-image:url('afterglow.jpg')"></div>
-  <span class="tag">Villa Lev · after golden hour</span>
-  <div class="wrap cap"><h2 class="reveal">The light turns gold around eight — then the sky becomes a show of colours and shapes.</h2></div>
+  <span class="tag" data-i18n="band.afterglow.tag">Villa Lev · after golden hour</span>
+  <div class="wrap cap"><h2 class="reveal" data-i18n="band.afterglow.h2">The light turns gold around eight — then the sky becomes a show of colours and shapes.</h2></div>
 </section>
 
 <!-- FEELING -->
 <section class="pad on-sand" id="feelings">
   <div class="wrap">
     <div class="feel-head">
-      <h2 class="reveal">What our guests take home</h2>
-      <span class="eyebrow reveal d1">Long after they leave</span>
+      <h2 class="reveal" data-i18n="feel.h2">What our guests take home</h2>
+      <span class="eyebrow reveal d1" data-i18n="feel.eyebrow">Long after they leave</span>
     </div>
     <div class="feel-grid">
-      <div class="feel reveal"><div class="k">01</div><h3>The view</h3><p>Every room opens to the water — the first sight each morning, and the last each night.</p></div>
-      <div class="feel reveal d1"><div class="k">02</div><h3>Privacy</h3><p>Small and scattered by design — each house with its own walls, its own light, its own stretch of sea.</p></div>
-      <div class="feel reveal d2"><div class="k">03</div><h3>Quiet luxury</h3><p>Stone, linen and shade — comfort so complete it goes unnoticed.</p></div>
-      <div class="feel reveal d3"><div class="k">04</div><h3>Easy service</h3><p>There the moment it is wanted, gracefully in the background the rest of the time — a glance sets the day in motion.</p></div>
-      <div class="feel-wide reveal d4"><div class="k">05</div><div><h3>The creative charge</h3><p>Guests leave with something made — a dish learned, a salon they will keep retelling, the pull to create something of their own. Antiparos has drawn artists for a century, and that spark tends to travel home.</p></div></div>
+      <div class="feel reveal"><div class="k">01</div><h3 data-i18n="feel1.h3">The view</h3><p data-i18n="feel1.p">Every room opens to the water — the first sight each morning, and the last each night.</p></div>
+      <div class="feel reveal d1"><div class="k">02</div><h3 data-i18n="feel2.h3">Privacy</h3><p data-i18n="feel2.p">Small and scattered by design — each house with its own walls, its own light, its own stretch of sea.</p></div>
+      <div class="feel reveal d2"><div class="k">03</div><h3 data-i18n="feel3.h3">Quiet luxury</h3><p data-i18n="feel3.p">Stone, linen and shade — comfort so complete it goes unnoticed.</p></div>
+      <div class="feel reveal d3"><div class="k">04</div><h3 data-i18n="feel4.h3">Easy service</h3><p data-i18n="feel4.p">There the moment it is wanted, gracefully in the background the rest of the time — a glance sets the day in motion.</p></div>
+      <div class="feel-wide reveal d4"><div class="k">05</div><div><h3 data-i18n="feel5.h3">The creative charge</h3><p data-i18n="feel5.p">Guests leave with something made — a dish learned, a salon they will keep retelling, the pull to create something of their own. Antiparos has drawn artists for a century, and that spark tends to travel home.</p></div></div>
     </div>
   </div>
 </section>
@@ -350,30 +363,30 @@
 <!-- THE DETAIL · how you stay -->
 <section class="pad concept on-dark" id="stay">
   <div class="wrap">
-    <span class="eyebrow reveal">The format</span>
-    <h2 class="reveal d1">Villa privacy, <em>with the ease of a hotel.</em></h2>
-    <p class="reveal d2">Tora is a collection of private villas and villa rooms set across several hillsides around Saint George — each one apart, so privacy is a matter of architecture, not request, yet held together by the quiet service of a hotel. Stone, light and the open Aegean belong to every one. One arrival; many ways to stay.</p>
+    <span class="eyebrow reveal" data-i18n="stay.eyebrow">The format</span>
+    <h2 class="reveal d1" data-i18n="stay.h2">Villa privacy, <em>with the ease of a hotel.</em></h2>
+    <p class="reveal d2" data-i18n="stay.p">Tora is a collection of private villas and villa rooms set across several hillsides around Saint George — each one apart, so privacy is a matter of architecture, not request, yet held together by the quiet service of a hotel. Stone, light and the open Aegean belong to every one. One arrival; many ways to stay.</p>
   </div>
 </section>
 
 <!-- SAINT GEORGE band -->
 <section class="band photo">
   <div class="scene" style="background-image:url('beach-church.jpg')"></div>
-  <span class="tag">Saint George church &amp; beach</span>
-  <div class="wrap cap"><h2 class="reveal">White against the blue, the way the Cyclades have always been.</h2></div>
+  <span class="tag" data-i18n="band.sg.tag">Saint George church &amp; beach</span>
+  <div class="wrap cap"><h2 class="reveal" data-i18n="band.sg.h2">White against the blue, the way the Cyclades have always been.</h2></div>
 </section>
 
 <!-- COLLECTION -->
 <section class="pad coll on-sand" id="collection">
   <div class="wrap">
-    <span class="eyebrow reveal">The collection</span>
-    <h2 class="reveal d1">One welcome. <em>Many ways to stay.</em></h2>
-    <p class="reveal d2">Villa rooms and whole villas across neighbouring grounds at Saint George — each built for privacy, taken one at a time or joined together for a gathering that takes the run of the place.</p>
+    <span class="eyebrow reveal" data-i18n="coll.eyebrow">The collection</span>
+    <h2 class="reveal d1" data-i18n="coll.h2">One welcome. <em>Many ways to stay.</em></h2>
+    <p class="reveal d2" data-i18n="coll.p">Villa rooms and whole villas across neighbouring grounds at Saint George — each built for privacy, taken one at a time or joined together for a gathering that takes the run of the place.</p>
     <div class="coll-row">
-      <div class="cc reveal"><h3>Villa rooms &amp; villas</h3><p>From a private villa room to a whole house with its own pool and entrance — each built for privacy, easily joined for larger groups.</p></div>
-      <div class="cc reveal d1"><h3>A home for creatives</h3><p>Studios and open-air ateliers for artists in residence — their presence part of every stay.</p></div>
-      <div class="cc reveal d2"><h3>Boutique suites &amp; wellness</h3><p>Hammam, sauna and calm rooms made for shoulder-season stays and retreats.</p></div>
-      <div class="cc reveal d3"><h3>A place to gather</h3><p>Open-air grounds made for weddings, salons and private evenings by the sea.</p></div>
+      <div class="cc reveal"><h3 data-i18n="cc1.h3">Villa rooms &amp; villas</h3><p data-i18n="cc1.p">From a private villa room to a whole house with its own pool and entrance — each built for privacy, easily joined for larger groups.</p></div>
+      <div class="cc reveal d1"><h3 data-i18n="cc2.h3">A home for creatives</h3><p data-i18n="cc2.p">Studios and open-air ateliers for artists in residence — their presence part of every stay.</p></div>
+      <div class="cc reveal d2"><h3 data-i18n="cc3.h3">Boutique suites &amp; wellness</h3><p data-i18n="cc3.p">Hammam, sauna and calm rooms made for shoulder-season stays and retreats.</p></div>
+      <div class="cc reveal d3"><h3 data-i18n="cc4.h3">A place to gather</h3><p data-i18n="cc4.p">Open-air grounds made for weddings, salons and private evenings by the sea.</p></div>
     </div>
   </div>
 </section>
@@ -384,12 +397,12 @@
 <section class="pad vision on-dark cta-final" id="join">
   <div class="cta-bg" style="background-image:url('blue-lagoon.jpg')"></div>
   <div class="cta-veil"></div>
-  <span class="tag">The Blue Lagoon · between Paros and Antiparos</span>
+  <span class="tag" data-i18n="cta.bg-tag">The Blue Lagoon · between Paros and Antiparos</span>
   <div class="wrap">
-    <span class="eyebrow reveal">A ten-minute ferry ride from Paros · a world from everywhere</span>
-    <h2 class="reveal d1">A meaningful — <em>and profitable</em> — journey.</h2>
-    <p class="reveal d2">There is room for a few to build this with us — whether as a hospitality professional, or simply to own a small slice of this paradise.</p>
-    <div class="vcta reveal d3"><a class="btn btn-fill" href="mailto:eytan@torasanctuary.com?subject=TORA%20Antiparos%20—%20Joining%20the%20journey">Contact us</a></div>
+    <span class="eyebrow reveal" data-i18n="cta.eyebrow">A ten-minute ferry ride from Paros · a world from everywhere</span>
+    <h2 class="reveal d1" data-i18n="cta.h2">A meaningful — <em>and profitable</em> — journey.</h2>
+    <p class="reveal d2" data-i18n="cta.p">There is room for a few to build this with us — whether as a hospitality professional, or simply to own a small slice of this paradise.</p>
+    <div class="vcta reveal d3"><a class="btn btn-fill" href="mailto:eytan@torasanctuary.com?subject=TORA%20Antiparos%20—%20Joining%20the%20journey" data-i18n="cta.btn">Contact us</a></div>
   </div>
 </section>
 
@@ -397,22 +410,132 @@
   <div class="wrap foot-in">
     <div>
       <div class="foot-brand"><img class="logo" src="tora-logo.svg" alt="TΩRA" /></div>
-      <div style="margin-top:8px">Saint George, Antiparos, Cyclades, Greece</div>
+      <div style="margin-top:8px" data-i18n="foot.addr">Saint George, Antiparos, Cyclades, Greece</div>
     </div>
     <div>
-      <a href="#join">Enquire</a>
-      <a href="mailto:eytan@torasanctuary.com?subject=TORA%20Antiparos%20—%20Partners%20%26%20investors">Partners &amp; investors</a>
+      <a href="#join" data-i18n="foot.enquire">Enquire</a>
+      <a href="mailto:eytan@torasanctuary.com?subject=TORA%20Antiparos%20—%20Partners%20%26%20investors" data-i18n="foot.partners">Partners &amp; investors</a>
       <a href="mailto:eytan@torasanctuary.com">eytan@torasanctuary.com</a>
     </div>
   </div>
 </footer>
 
 <script>
+/* i18n — EN authoritative · EL = Greek DRAFT, pending native review.
+   To add copy later: add the data-i18n attribute in markup AND both keys here.
+   6 EN strings differ from index.greek.html reference and are marked [LIVE]. */
+var I18N = {
+  'nav.concept':{en:'The Concept',el:'Η Ιδέα'},
+  'nav.proof':{en:'The Proof',el:'Η Απόδειξη'},
+  'nav.stay':{en:'The Stay',el:'Η Διαμονή'},
+  'nav.invest':{en:'Invest',el:'Επένδυση'},
+  'nav.enquire':{en:'Enquire',el:'Επικοινωνία'},
+  /* [LIVE] hero.place — live uses "Saint George", ref used "Agios Georgios" */
+  'hero.place':{en:'Saint George · Antiparos · Cyclades',el:'Άγιος Γιώργος · Αντίπαρος · Κυκλάδες'},
+  'hero.line':{en:'Where quiet luxury meets creativity.',el:'Εκεί όπου η διακριτική πολυτέλεια συναντά τη δημιουργικότητα.'},
+  'hero.def':{en:'<span class="hw">Tora</span> · τώρα · <span class="pos">adv.</span> — "now," in Greek.',el:'<span class="hw">Τώρα</span> · <span class="pos">επίρρ.</span> — να ζεις πλήρως στο παρόν.'},
+  'hero.sub':{en:'Above the Aegean, the days are unhurried and unpretentious, the sea fills every view, and creativity runs through the house — an invitation to stop, and live fully in the present.',el:'Πάνω από το Αιγαίο, οι μέρες κυλούν αβίαστα κι ανεπιτήδευτα, η θάλασσα γεμίζει κάθε θέα, κι η δημιουργικότητα διατρέχει όλο το σπίτι — μια πρόσκληση να σταθείς και να ζήσεις πλήρως στο παρόν.'},
+  'hero.opentag':{en:'Opening summer 2029',el:'Άνοιγμα καλοκαίρι 2029'},
+  'hero.begin':{en:'Begin',el:'Ξεκινήστε'},
+  'premise.eyebrow':{en:'The next evolution of luxury travel',el:'Η επόμενη εξέλιξη των ταξιδιών πολυτελείας'},
+  'premise.h2':{en:'White-glove luxury is obsolete. <em>The new currency is meaning.</em>',el:'Η επιδεικτική πολυτέλεια ανήκει στο παρελθόν. <em>Το νέο νόμισμα είναι το νόημα.</em>'},
+  'premise.p':{en:'The most discerning travellers have seen every version of five-star; what they seek now is depth, not flash — a place that could exist nowhere else. At Tora that depth is presence, found through creativity that runs quietly through the house — there to be observed, or made your own. We are not selling a room, but a stay whose meaning lingers long after it ends.',el:'Οι πιο απαιτητικοί ταξιδιώτες έχουν δει κάθε εκδοχή των πέντε αστέρων· αυτό που αναζητούν τώρα είναι βάθος, όχι εντυπωσιασμός — έναν τόπο που δεν θα μπορούσε να υπάρχει πουθενά αλλού. Στην Tora, αυτό το βάθος είναι η παρουσία, που αναδύεται μέσα από τη δημιουργικότητα η οποία ρέει διακριτικά μέσα στο σπίτι — εκεί για να την παρατηρήσεις ή να την κάνεις δική σου. Δεν προσφέρουμε ένα δωμάτιο, αλλά μια διαμονή το νόημα της οποίας μένει πολύ μετά το τέλος της.'},
+  'band.despotiko.tag':{en:'Bay of Saint George · Despotiko — the view from one of our plots',el:'Κόλπος Αγίου Γεωργίου · Δεσποτικό — η θέα από ένα από τα οικόπεδά μας'},
+  'band.despotiko.h2':{en:'A place that could exist nowhere else.',el:'Ένας τόπος που δεν θα μπορούσε να υπάρχει πουθενά αλλού.'},
+  'muse.eyebrow':{en:'The concept',el:'Η ιδέα'},
+  'muse.h2':{en:'A stay is the beginning. <em>The making is the rest.</em>',el:'Η διαμονή είναι μόνο η αρχή. <em>Η δημιουργία είναι όλα τα υπόλοιπα.</em>'},
+  'muse.p':{en:'Creativity is the backbone of the house — embedded everywhere, forced nowhere. Artists live and work here through the season: a studio door left open, a salon that drifts late, a conversation you carry to dinner. You choose your own distance from it — observe, join in, create alongside them, or let it be. The island and its calm come first; the making lives beside you, never in front of you. What remains is an exchange between artist, guest and island that cannot be copied — here, you choose not simply a room, but the creative season.',el:'Η δημιουργικότητα είναι η ραχοκοκαλιά του σπιτιού — παντού παρούσα, πουθενά επιβεβλημένη. Καλλιτέχνες ζουν κι εργάζονται εδώ όλη τη σεζόν: μια πόρτα εργαστηρίου αφημένη ανοιχτή, μια συντροφιά που κρατά ως αργά, μια κουβέντα που παίρνεις μαζί σου στο δείπνο. Εσύ επιλέγεις την απόστασή σου από όλα αυτά — να παρατηρείς, να συμμετέχεις, να δημιουργείς δίπλα τους ή να τα αφήνεις να συμβαίνουν. Το νησί κι η γαλήνη του προηγούνται· η δημιουργία ζει πλάι σου, ποτέ μπροστά σου. Αυτό που μένει είναι μια ανταλλαγή ανάμεσα στον καλλιτέχνη, τον επισκέπτη και το νησί που δεν αντιγράφεται — εδώ δεν επιλέγεις απλώς ένα δωμάτιο, αλλά τη δημιουργική σου σεζόν.'},
+  'way1.h3':{en:'The studios',el:'Τα εργαστήρια'},
+  'way1.p':{en:'Artists in residence in open-air ateliers — their work, and your standing welcome to it.',el:'Φιλοξενούμενοι καλλιτέχνες σε ανοιχτά, υπαίθρια ατελιέ — το έργο τους, κι η μόνιμη πρόσκλησή σου σ’αυτό.'},
+  'way2.h3':{en:'The table',el:'Το τραπέζι'},
+  'way2.p':{en:"Cooking classes and long, unhurried lunches with a chef who knows the island's growers.",el:'Μαθήματα μαγειρικής και μακριά, ανέμελα γεύματα μ’ έναν σεφ που γνωρίζει τους παραγωγούς του νησιού.'},
+  'way3.h3':{en:'By sea &amp; land',el:'Με θάλασσα &amp; στεριά'},
+  'way3.p':{en:'A boat to a quiet cove at dawn, and the back roads by ATV whenever the mood moves you.',el:'Μια βάρκα σ’ έναν ήσυχο όρμο την αυγή, κι οι κρυφοί δρόμοι με ATV όποτε σου ‘ρθει η διάθεση.'},
+  'way4.h3':{en:'Stillness',el:'Ησυχία'},
+  'way4.p':{en:'A chair, the shade, the bay — the most treasured plan of all.',el:'Μια καρέκλα, η σκιά, ο κόλπος — το πιο πολύτιμο σχέδιο απ’ όλα.'},
+  /* [LIVE] band.vl.tag — live uses "Villa Lev · Saint George", ref used "Agios Georgios" */
+  'band.vl.tag':{en:'Villa Lev · Saint George',el:'Villa Lev · Άγιος Γιώργος'},
+  'band.vl.h2':{en:'Where it all begins.',el:'Εκεί όπου ξεκινούν όλα.'},
+  'proof.eyebrow':{en:'Proof of concept · Villa Lev',el:'Απόδειξη της ιδέας · Villa Lev'},
+  'proof.h2':{en:"The island already loves the house — <em>and there's room for more.</em>",el:'Το νησί ήδη αγαπά το σπίτι — <em>κι υπάρχει χώρος για περισσότερα.</em>'},
+  'proof.intro':{en:'Tora begins with Villa Lev: five profitable seasons as the most sought-after villa on Antiparos, a waiting list every summer, the standard and team already in place. The only thing missing was the room to grow — until now. Opening summer 2029.',el:'Η Tora ξεκινά με τη Villa Lev: πέντε κερδοφόρες σεζόν ως η πιο περιζήτητη βίλα της Αντιπάρου, λίστα αναμονής κάθε καλοκαίρι, το επίπεδο κι η ομάδα ήδη σε θέση. Το μόνο που έλειπε ήταν ο χώρος για να μεγαλώσει — μέχρι τώρα. Άνοιγμα καλοκαίρι 2029.'},
+  'proof.stat1.l':{en:'villa on Antiparos',el:'βίλα στην Αντίπαρο'},
+  'proof.stat1.s':{en:'Villa Lev website →',el:'Ιστότοπος Villa Lev →'},
+  'proof.stat2.l':{en:'of Airbnb worldwide',el:'του Airbnb παγκοσμίως'},
+  'proof.stat2.s':{en:'View on Airbnb →',el:'Δείτε στο Airbnb →'},
+  'proof.stat3.l':{en:'held every season',el:'κάθε σεζόν'},
+  'proof.stat3.s':{en:'Read on Google →',el:'Διαβάστε στο Google →'},
+  'proof.concept.title':{en:'The Concept',el:'Η Ιδέα'},
+  'proof.concept.body':{en:'Creativity woven into every stay — studios open to guests, the table, and the stillness.',el:'Η δημιουργικότητα πλεγμένη σε κάθε διαμονή — ανοιχτά εργαστήρια, τραπέζι, γαλήνη.'},
+  'proof.concept.link':{en:'Discover it →',el:'Ανακαλύψτε το →'},
+  'proof.visit':{en:'Visit Villa Lev',el:'Επισκεφθείτε τη Villa Lev'},
+  'proof.src':{en:"Ranking via AirDNA · reviews via Airbnb &amp; Google · figures from Villa Lev's public record.",el:'Κατάταξη μέσω AirDNA · κριτικές μέσω Airbnb &amp; Google · στοιχεία από το δημόσιο ιστορικό της Villa Lev.'},
+  'band.afterglow.tag':{en:'Villa Lev · after golden hour',el:'Villa Lev · μετά τη χρυσή ώρα'},
+  'band.afterglow.h2':{en:'The light turns gold around eight — then the sky becomes a show of colours and shapes.',el:'Το φως χρυσώνει κατά τις οχτώ — κι έπειτα ο ουρανός γίνεται ένα θέαμα από χρώματα και σχήματα.'},
+  'feel.h2':{en:'What our guests take home',el:'Τι παίρνουν μαζί τους οι επισκέπτες μας'},
+  'feel.eyebrow':{en:'Long after they leave',el:'Πολύ καιρό αφότου φύγουν'},
+  'feel1.h3':{en:'The view',el:'Η θέα'},
+  /* [LIVE] feel1.p — live omits "and never shared" clause from reference */
+  'feel1.p':{en:'Every room opens to the water — the first sight each morning, and the last each night.',el:'Κάθε δωμάτιο ανοίγει στο νερό — το πρώτο που βλέπεις κάθε πρωί, και το τελευταίο κάθε βράδυ.'},
+  'feel2.h3':{en:'Privacy',el:'Ιδιωτικότητα'},
+  'feel2.p':{en:'Small and scattered by design — each house with its own walls, its own light, its own stretch of sea.',el:'Μικρά και διάσπαρτα εξ ορισμού — κάθε σπίτι με τους δικούς του τοίχους, το δικό του φως, το δικό του κομμάτι θάλασσας.'},
+  'feel3.h3':{en:'Quiet luxury',el:'Διακριτική πολυτέλεια'},
+  'feel3.p':{en:'Stone, linen and shade — comfort so complete it goes unnoticed.',el:'Πέτρα, λινό και σκιά — μια άνεση τόσο πλήρης που περνά απαρατήρητη.'},
+  'feel4.h3':{en:'Easy service',el:'Αβίαστη φροντίδα'},
+  'feel4.p':{en:'There the moment it is wanted, gracefully in the background the rest of the time — a glance sets the day in motion.',el:'Εκεί τη στιγμή που τη χρειάζεσαι, διακριτικά στο παρασκήνιο την υπόλοιπη ώρα — μια ματιά βάζει τη μέρα σε κίνηση.'},
+  'feel5.h3':{en:'The creative charge',el:'Η δημιουργική σπίθα'},
+  'feel5.p':{en:'Guests leave with something made — a dish learned, a salon they will keep retelling, the pull to create something of their own. Antiparos has drawn artists for a century, and that spark tends to travel home.',el:'Οι επισκέπτες φεύγουν έχοντας φτιάξει κάτι — ένα πιάτο που έμαθαν, μια βραδιά που θα διηγούνται ξανά και ξανά, την παρόρμηση να δημιουργήσουν κάτι δικό τους. Η Αντίπαρος προσελκύει καλλιτέχνες έναν αιώνα τώρα, κι αυτή η σπίθα συνηθίζει να ταξιδεύει μαζί τους στο σπίτι.'},
+  'stay.eyebrow':{en:'The format',el:'Η μορφή'},
+  'stay.h2':{en:'Villa privacy, <em>with the ease of a hotel.</em>',el:'Η ιδιωτικότητα μιας βίλας, <em>με την άνεση ενός ξενοδοχείου.</em>'},
+  'stay.p':{en:'Tora is a collection of private villas and villa rooms set across several hillsides around Saint George — each one apart, so privacy is a matter of architecture, not request, yet held together by the quiet service of a hotel. Stone, light and the open Aegean belong to every one. One arrival; many ways to stay.',el:'Η Tora είναι μια συλλογή ιδιωτικών βιλών και δωματίων-βιλών απλωμένων σε αρκετές πλαγιές γύρω από τον Άγιο Γιώργο — το καθένα ξεχωριστό, ώστε η ιδιωτικότητα να είναι θέμα αρχιτεκτονικής, όχι αιτήματος, κι όμως δεμένα μεταξύ τους με τη διακριτική φροντίδα ενός ξενοδοχείου. Η πέτρα, το φως και το ανοιχτό Αιγαίο ανήκουν σε όλα. Μία άφιξη· πολλοί τρόποι να μείνεις.'},
+  'band.sg.tag':{en:'Saint George church &amp; beach',el:'Εκκλησία &amp; παραλία Αγίου Γεωργίου'},
+  'band.sg.h2':{en:'White against the blue, the way the Cyclades have always been.',el:'Λευκό πάνω στο μπλε, όπως ήταν πάντα οι Κυκλάδες.'},
+  'coll.eyebrow':{en:'The collection',el:'Η συλλογή'},
+  'coll.h2':{en:'One welcome. <em>Many ways to stay.</em>',el:'Ένα καλωσόρισμα. <em>Πολλοί τρόποι να μείνεις.</em>'},
+  /* [LIVE] coll.p — live: "at Saint George", ref: "at Agios Georgios" */
+  'coll.p':{en:'Villa rooms and whole villas across neighbouring grounds at Saint George — each built for privacy, taken one at a time or joined together for a gathering that takes the run of the place.',el:'Δωμάτια-βίλες κι ολόκληρες βίλες σε γειτονικά κτήματα στον Άγιο Γιώργο — το καθένα φτιαγμένο για ιδιωτικότητα, νοικιασμένο ένα-ένα ή ενωμένο για μια συγκέντρωση που παίρνει όλο τον χώρο.'},
+  'cc1.h3':{en:'Villa rooms &amp; villas',el:'Δωμάτια-βίλες &amp; βίλες'},
+  'cc1.p':{en:'From a private villa room to a whole house with its own pool and entrance — each built for privacy, easily joined for larger groups.',el:'Από ένα ιδιωτικό δωμάτιο-βίλα έως ένα ολόκληρο σπίτι με δική του πισίνα κι είσοδο — το καθένα φτιαγμένο για ιδιωτικότητα, εύκολα ενωμένο για μεγαλύτερες παρέες.'},
+  'cc2.h3':{en:'A home for creatives',el:'Ένα σπίτι για δημιουργούς'},
+  'cc2.p':{en:'Studios and open-air ateliers for artists in residence — their presence part of every stay.',el:'Στούντιο κι υπαίθρια ατελιέ για φιλοξενούμενους καλλιτέχνες — η παρουσία τους μέρος κάθε διαμονής.'},
+  'cc3.h3':{en:'Boutique suites &amp; wellness',el:'Boutique σουίτες &amp; ευεξία'},
+  'cc3.p':{en:'Hammam, sauna and calm rooms made for shoulder-season stays and retreats.',el:'Χαμάμ, σάουνα κι ήρεμοι χώροι φτιαγμένοι για διαμονές εκτός αιχμής κι αποδράσεις.'},
+  'cc4.h3':{en:'A place to gather',el:'Ένας τόπος για συναντήσεις'},
+  'cc4.p':{en:'Open-air grounds made for weddings, salons and private evenings by the sea.',el:'Υπαίθριοι χώροι φτιαγμένοι για γάμους, εκδηλώσεις κι ιδιωτικές βραδιές δίπλα στη θάλασσα.'},
+  /* [NEW] cta.bg-tag — present in live file, not in index.greek.html reference */
+  'cta.bg-tag':{en:'The Blue Lagoon · between Paros and Antiparos',el:'Η Μπλε Λίμνη · ανάμεσα στην Πάρο και την Αντίπαρο'},
+  'cta.eyebrow':{en:'A ten-minute ferry ride from Paros · a world from everywhere',el:'Δέκα λεπτά με το φέρι από την Πάρο · έναν κόσμο μακριά από παντού'},
+  'cta.h2':{en:'A meaningful — <em>and profitable</em> — journey.',el:'Ένα ταξίδι με νόημα — <em>και απόδοση.</em>'},
+  'cta.p':{en:'There is room for a few to build this with us — whether as a hospitality professional, or simply to own a small slice of this paradise.',el:'Υπάρχει χώρος για λίγους να το χτίσουν αυτό μαζί μας — είτε ως επαγγελματίες της φιλοξενίας, είτε απλώς για ν’ αποκτήσουν ένα μικρό κομμάτι αυτού του παραδείσου.'},
+  'cta.btn':{en:'Contact us',el:'Επικοινωνήστε μαζί μας'},
+  'foot.addr':{en:'Saint George, Antiparos, Cyclades, Greece',el:'Άγιος Γιώργος, Αντίπαρος, Κυκλάδες, Ελλάδα'},
+  'foot.enquire':{en:'Enquire',el:'Επικοινωνία'},
+  'foot.partners':{en:'Partners &amp; investors',el:'Συνεργάτες &amp; επενδυτές'}
+};
+
 (function(){
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var nav = document.getElementById('nav');
   function onScroll(){ nav.classList.toggle('scrolled', window.scrollY > window.innerHeight*0.72); }
   onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  function applyLang(lang){
+    if(lang!=='en' && lang!=='el') lang='en';
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var t = I18N[el.getAttribute('data-i18n')];
+      if(t && t[lang]!=null) el.innerHTML = t[lang];
+    });
+    document.querySelectorAll('.lang-tog button').forEach(function(b){
+      b.classList.toggle('active', b.getAttribute('data-lang')===lang);
+    });
+    try{ localStorage.setItem('tora-lang', lang); }catch(e){}
+  }
+  var saved='en'; try{ saved = localStorage.getItem('tora-lang') || 'en'; }catch(e){}
+  applyLang(saved);
+  document.querySelectorAll('.lang-tog button').forEach(function(b){
+    b.addEventListener('click', function(){ applyLang(b.getAttribute('data-lang')); });
+  });
 
   function ease(t){ return t<.5 ? 4*t*t*t : 1-Math.pow(-2*t+2,3)/2; }
   document.querySelectorAll('a[href^="#"]').forEach(function(a){
