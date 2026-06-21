@@ -60,7 +60,10 @@
   .hero .tora .om{font-size:1em}
   .hero .place{margin-top:6px;font-size:11px;letter-spacing:.55em;text-transform:uppercase;color:var(--bronze-hi);opacity:0;animation:fadein 1.2s ease 1s forwards}
   .hero .line{margin-top:30px;font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,3.2vw,2.1rem);color:#F6EFE0;opacity:0;transform:translateY(20px);animation:rise 1.2s var(--ease) 1.25s forwards}
-  .hero .sub{margin:16px auto 0;max-width:46ch;font-size:clamp(.92rem,1.4vw,1.05rem);color:var(--muted-d);opacity:0;transform:translateY(20px);animation:rise 1.2s var(--ease) 1.5s forwards}
+  .hero .def{margin:20px auto 0;font-family:var(--serif);font-style:italic;font-size:clamp(1.05rem,1.7vw,1.4rem);color:var(--bronze-hi);letter-spacing:.03em;opacity:0;transform:translateY(20px);animation:rise 1.2s var(--ease) 1.45s forwards}
+  .hero .def .hw{font-style:normal}
+  .hero .def .pos{font-family:var(--sans);font-style:normal;font-size:.62em;letter-spacing:.2em;text-transform:uppercase;color:var(--muted-d)}
+  .hero .sub{margin:18px auto 0;max-width:48ch;font-size:clamp(.92rem,1.4vw,1.05rem);color:var(--muted-d);opacity:0;transform:translateY(20px);animation:rise 1.2s var(--ease) 1.65s forwards}
   .hero .opentag{margin-top:24px;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--bronze-hi);opacity:0;animation:fadein 1.2s ease 1.85s forwards}
   .hero .opentag:before,.hero .opentag:after{content:"";display:inline-block;width:26px;height:1px;background:var(--bronze);vertical-align:middle;margin:0 12px}
   .scrollcue{position:absolute;left:50%;bottom:54px;z-index:3;transform:translateX(-50%);text-align:center;opacity:0;animation:fadein 1s ease 2s forwards}
@@ -200,7 +203,7 @@
   @media(prefers-reduced-motion:reduce){
     *{animation:none!important;transition:none!important}
     .reveal{opacity:1;transform:none}
-    .hero .tora,.hero .place,.hero .line,.hero .sub,.hero .opentag,.scrollcue{opacity:1;transform:none}
+    .hero .tora,.hero .place,.hero .line,.hero .def,.hero .sub,.hero .opentag,.scrollcue{opacity:1;transform:none}
   }
 </style>
 </head>
@@ -232,7 +235,8 @@
     <div class="tora">T<span class="om">Ω</span>RA</div>
     <div class="place">Agios Georgios · Antiparos · Cyclades</div>
     <p class="line">Where quiet luxury meets creativity.</p>
-    <p class="sub">Tora — τώρα — is Greek for <em>now</em>. The Cyclades tempt you to keep moving, island after island; Tora is the opposite invitation — to stay in one place, and live wholly in the present.</p>
+    <p class="def"><span class="hw">Tora</span> · τώρα · <span class="pos">adv.</span> — “now,” in Greek.</p>
+    <p class="sub">Above the Aegean, the days are unhurried and unpretentious, the sea fills every view, and creativity runs through the house — an invitation to stop, and live fully in the present.</p>
     <div class="opentag">Opening summer 2029</div>
   </div>
   <a href="#concept" class="scrollcue"><i></i><span>Begin</span></a>
