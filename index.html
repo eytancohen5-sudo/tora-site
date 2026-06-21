@@ -36,14 +36,14 @@
   .pad{padding:clamp(84px,13vh,168px) 0}
 
   /* ── Nav ── */
-  nav{position:fixed;inset:0 0 auto 0;z-index:100;padding:24px 0;transition:padding .5s var(--ease),background .5s var(--ease),box-shadow .5s var(--ease)}
+  nav{position:fixed;inset:0 0 auto 0;z-index:100;padding:22px 0;background:linear-gradient(180deg,rgba(20,15,11,.6),rgba(20,15,11,0));transition:padding .5s var(--ease),background .5s var(--ease),box-shadow .5s var(--ease)}
   nav.scrolled{padding:14px 0;background:rgba(30,24,19,.82);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line-d)}
   .nav-in{display:flex;align-items:center;justify-content:space-between}
   .brand{font-family:var(--serif);font-weight:400;font-size:24px;letter-spacing:.22em;color:var(--paper);text-decoration:none;padding-left:.22em}
   .nav-links{display:flex;gap:36px;align-items:center}
-  .nav-links a{font-size:12px;letter-spacing:.08em;color:var(--muted-d);text-decoration:none;transition:color .3s}
+  .nav-links a{font-size:14px;letter-spacing:.1em;color:#F0E7D6;text-shadow:0 1px 10px rgba(20,15,11,.6);text-decoration:none;transition:color .3s}
   .nav-links a:hover{color:var(--paper)}
-  .nav-cta{font-size:11px;letter-spacing:.16em;text-transform:uppercase;padding:9px 20px;border:1px solid var(--bronze);border-radius:40px;color:var(--bronze-hi)!important}
+  .nav-cta{font-size:12px;letter-spacing:.16em;text-transform:uppercase;padding:10px 22px;border:1px solid var(--bronze-hi);border-radius:40px;color:var(--bronze-hi)!important;text-shadow:none}
   .nav-cta:hover{background:var(--bronze);color:var(--ink)!important}
   @media(max-width:760px){.nav-links a:not(.nav-cta){display:none}.hero-media video{object-position:32% 50%}}
 
@@ -138,7 +138,7 @@
   .band .scene:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,15,11,.1),rgba(20,15,11,.62))}
   .band .cap{position:relative;z-index:2;padding:0 0 46px}
   .band .cap h2{font-size:clamp(1.8rem,4vw,3rem);color:var(--paper);max-width:18ch}
-  .band .tag{position:absolute;right:24px;top:20px;z-index:2;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(242,233,215,.62);border:1px solid rgba(242,233,215,.25);padding:6px 12px;border-radius:30px}
+  .band .tag{position:absolute;right:24px;top:20px;z-index:2;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#F4ECDC;background:rgba(20,15,11,.5);border:1px solid rgba(242,233,215,.5);padding:8px 15px;border-radius:30px;backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);text-shadow:0 1px 6px rgba(20,15,11,.5)}
   .vl-band .vl-logo{position:absolute;top:45%;left:50%;transform:translate(-50%,-50%);width:min(46vw,440px);z-index:2;filter:drop-shadow(0 2px 34px rgba(20,15,11,.6));opacity:0;animation:fadein 1.5s ease .25s both}
   .vl-band .cap{width:100%;text-align:center;padding-bottom:46px}
   .vl-band .cap h2{max-width:none;margin:0 auto;font-style:italic;font-size:clamp(1.3rem,2.6vw,2rem)}
