@@ -50,7 +50,9 @@
   .lang-tog button{font-family:var(--sans);font-weight:500;font-size:11px;letter-spacing:.1em;padding:6px 11px;background:transparent;color:var(--muted-d);border:0;cursor:pointer;line-height:1;transition:color .3s,background .3s}
   .lang-tog button.active{background:var(--bronze);color:var(--ink)}
   .lang-tog button:not(.active):hover{color:var(--paper)}
-  @media(max-width:760px){.nav-links a:not(.nav-cta){display:none}.nav-links{gap:14px}.hero-media video{object-position:32% 50%}}
+  @media(max-width:760px){.nav-links a:not(.nav-cta){display:none}.nav-links{gap:14px}}
+  @media(max-width:760px) and (orientation:portrait){.hero-media video{object-position:32% 50%}}
+  @media(orientation:landscape) and (max-height:600px){.hero-media video{object-position:50% 50%}}
 
   /* ── Hero (cinematic, video-ready) ── */
   .hero{position:relative;height:100vh;min-height:660px;display:flex;align-items:center;overflow:hidden;text-align:center}
